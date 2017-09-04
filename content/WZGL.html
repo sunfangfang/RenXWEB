@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>人像后台-文章管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset_s.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="../css/tc.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/top.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/manager.css">
+    <link rel="stylesheet" type="text/css" href="../css/wzgl.css"/>
+    <script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="../js/placeholder.js"></script>
+    <script type="text/javascript" src="../js/wzgl.js"></script>
+    <style>
+        .tit_a{
+            color: #00a0e9;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="t_left">
+        <i class="addr"><img src="../img/addr.png" alt=""></i>
+        <span>您所在的位置: 首页>内容管理></span>
+        <span style="color: #fa8383">文章管理</span>
+    </div>
+    <i class="refresh"><img src="../img/refresh.png" alt=""></i>
+</div>
+<div class="con">
+    <div class="info_contain">
+        <div class="title">
+            <span class="tit_txt">文章管理</span>
+            <div class="div_fdl">
+                <div class="d_select">
+                    <select class="s_font">
+                        <option>全部分类</option>
+                        <option>全部分类</option>
+                        <option>全部分类</option>
+                        <option>全部分类</option>
+                        <option>全部分类</option>
+                    </select>
+                </div>
+                <div class="d_date clearfix">
+                    <span class="s_date">日期:</span>
+                    <input type="text" value="" class="i_ty"/>
+                    <span>--</span>
+                    <input type="text" value="" class="i_ty"/>
+                </div>
+                <div class="top_src">
+                    <input type="text" class="src_input" placeholder="请输入客户编号/客户姓名/电话">
+                    <a class="src_btn tb_green">查询</a>
+                </div>
+            </div>
+        </div>
+        <div class="d_cs clearfix">
+            <a href="javascript:void(0)">排序</a>
+            <a href="javascript:void(0)" class="a_lf">审核</a>
+            <a href="javascript:void(0)" class="a_lf">取消审核</a>
+            <a href="javascript:void(0)" class="a_lf">置顶</a>
+            <a href="javascript:void(0)" class="a_lf">取消置顶</a>
+            <a href="javascript:void(0)" class="a_lf">推荐</a>
+            <a href="javascript:void(0)" class="a_lf">取消推荐</a>
+            <a href="javascript:void(0)" class="a_lf">删除</a>
+            <a href="" class="a_lf" data-reveal-id="plyd">批量移动</a>
+        </div>
+        <div class="user_info">
+            <div class="tb_con">
+                <table class="tb_tables" cellspacing="0" cellpadding="0" style="min-width: 2000px">
+                    <thead>
+                    <tr>
+                        <td>全选</td>
+                        <td style="width: 60px;">排序</td>
+                        <td>标题</td>
+                        <td>分类</td>
+                        <td>点击量</td>
+                        <td>评论量</td>
+                        <td>关键字态</td>
+                        <td>来源</td>
+                        <td>摘要</td>
+                        <td>缩略图</td>
+                        <td>作者</td>
+                        <td>发布时间</td>
+                        <td>状态</td>
+                        <td style="border-right: none">操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor"><input type="text" value="3" class="px_input"></td>
+                        <td><a href="" class="tit_a">学会简介</a></td>
+                        <td>学会介绍</td>
+                        <td>56</td>
+                        <td>56</td>
+                        <td>简介</td>
+                        <td>国资委</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>admin</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_r">确定</a>
+                                                <!--<a href="#" class="an_btn tb_blue tb_r">取消</a>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">3</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" name=""/>
+                        </td>
+                        <td class="td_bor">1</td>
+                        <td>中国石油和化学工业联合会专业协会秘书长工作座谈会</br>于2016-05-10在青岛花园大酒店召开</td>
+                        <td>学会动态</td>
+                        <td>163</td>
+                        <td>163</td>
+                        <td>座谈会</td>
+                        <td>政府网</td>
+                        <td>已填写</td>
+                        <td class="td_img">
+                            <div class="use_photo"><img src="../img/img_h.jpg" alt="文章管理"></div>
+                            <div class="d_if">
+                                <img src="../img/img_ht.jpg" alt="文章管理"/>
+                            </div>
+                        </td>
+                        <td>管理员</td>
+                        <td>2016-09-24</br>11：58:11</td>
+                        <td>已审核</br>未置顶</br>为推荐</td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page_block">
+                <div class="page_con">
+                    <span class="tb_pag_xs"> 每页显示11条，共<label>13</label>页</span>
+                    <a href="#" class="fy_a"><span class="prev">上一页</span></a>
+                    <small class="line2">|</small>
+                        <span class="pages">
+                            <a href="#" class="page_check"><span>01</span></a>
+                            <a href="#"><span>02</span></a>
+                            <a href="#"><span>03</span></a>
+                            <a class="sl">...</a>
+                            <a href="#"><span>13</span></a>
+                        </span>
+                    <small class="line2">|</small>
+                    <a href="#" class="fy_a"><span class="next">下一页</span></a>
+                    <span class="pag_choose"><small>第</small><input type="text" value="13" class="dir_pag"><small>页
+                    </small></span>
+                    <a href="#" class="confirm">确定</a>
+                </div>
+                <a href="../AddArticle.html" target="I2" class="an_btn tb_orange tb_r add_btn tj_btn">添加文章</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--批量移动-->
+<div class="box" id="plyd" style="width:510px;">
+    <div class="box_tit">
+        <div class="box_t_name">批量移动</div>
+        <div href="#" class="box_close close-reveal-modal"></div>
+    </div>
+    <div class="box_con">
+        <div class="box_row" style="min-height: 300px">
+            <div class="box_label">
+                <span class="tc_span" style="margin-top: 10px">移动至</span>
+                <div class="wzfl">
+                    <div class="fl_text"></div>
+                    <div class="fl_block">
+                        <ul id="tree" class="ztree"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gbox_btm">
+        <button class="gbox_btn_clear close-reveal-modal">取消</button>
+        <button class="gbox_btn_save  tb_orange close-reveal-modal">保存</button>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(".wzfl").click(function(e){
+            e.stopPropagation();
+            $(".fl_block").toggle();
+        });
+        $(".box_con").click(function(e){
+            e.stopPropagation();
+            $(".fl_block").hide();
+        });
+    });
+</script>
+</body>
+</html>

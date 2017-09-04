@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>人像协会-友情链接</title>
+<link rel="stylesheet" type="text/css" href="../css/reset_s.css"/>
+<link rel="stylesheet" type="text/css" href="../css/table.css"/>
+<link rel="stylesheet" type="text/css" href="../css/top.css"/>
+<link rel="stylesheet" type="text/css" href="../css/reveal.css">
+<link rel="stylesheet" type="text/css" href="../css/tc.css">
+<link rel="stylesheet" type="text/css" href="../css/yqlj.css">
+<script src="../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../js/jquery.reveal.js"></script>
+<script>
+  $(function(){
+      $(".del").hover(function () {
+          var trH=$(this).offset().top;
+          var tbH=parseInt($(".tb_con").offset().top)+parseInt($(".tb_con").height())-150;
+          if(trH>tbH){
+              $(this).find(".del_box").css("top","-100px");
+              $(this).find(".xl_arrow").css({"background":"url('../img/arr_down.png') no-repeat center center","top":"106px"});
+          }else{
+
+              $(this).find(".del_box").css("top","48px");
+              $(this).find(".xl_arrow").css({"background":"url('../img/arr_up.png') no-repeat center center","top":"-15px"});
+          }
+          $(this).find(".del_box").toggle();
+      });
+  });
+  $(window).resize(function(){
+        TBH();
+    });
+    function TBH() {
+        var H=$(window).height();
+        var NH = parseInt(H) -190;
+        $(".tb_con").css("max-height", NH);
+    }
+	$(function(){
+        TBH();
+    })
+</script>
+</head>
+<body>
+   <div class="top">
+        <div class="t_left">
+            <i class="addr"><img src="../img/addr.png" alt=""></i>
+            <span>您所在的位置: 首页></span>
+            <span style="color: #fa8383">菜单管理</span>
+        </div>
+        <i class="refresh"><img src="../img/refresh.png" alt=""></i>
+    </div>
+  <div class="con">
+        <div class="info_contain">
+            <div class="title">
+                 <span class="tit_txt">友情链接</span>    
+            </div>
+           <div class="user_info">
+                <div class="tb_con">
+                    <table class="tb_tables" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>菜单名称</td>
+                                <td class="td_left td_yu">链接地址</td>
+                                <td>显示位置</td>
+                                <td>状态</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>国资委</td>
+                                <td class="td_fl">http://www.sasac.gov.cn/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>商务部</td>
+                                <td class="td_fl">http://www.mofcom.gov.cn/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>民政部</td>
+                                <td class="td_fl">http://www.mca.gov.cn/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="disable"></i>隐藏</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>商联会</td>
+                                <td class="td_fl">http://www.cgcc.org.cn/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>人像摄影</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>下层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>黑光网</td>
+                                <td class="td_fl">http://www.mofcom.gov.cn/</td>
+                                <td>下层链接</td>
+                                <td><label class="zt_con"><i class="disable"></i>隐藏</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                           <tr>
+                                <td>7</td>
+                                <td>商联会</td>
+                                <td class="td_fl">http://www.mca.gov.cn/</td>
+                                <td>下层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>黑光网</td>
+                                <td class="td_fl">http://www.mofcom.gov.cn/</td>
+                                <td>下层链接</td>
+                                <td><label class="zt_con"><i class="disable"></i>隐藏</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>8</td>
+                                <td>人像摄影</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>下层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>国资委</td>
+                                <td class="td_fl">http://www.sasac.gov.cn/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>民政部</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？ 
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr> 
+                             <tr>
+                                <td>10</td>
+                                <td>民政部</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？ 
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td>10</td>
+                                <td>民政部</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？ 
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr> 
+                             <tr>
+                                <td>10</td>
+                                <td>民政部</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？ 
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>  
+                             <tr>
+                                <td>10</td>
+                                <td>民政部</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？ 
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>10</td>
+                                <td>民政部</td>
+                                <td class="td_fl">http:www.rxsy.net/</td>
+                                <td>上层链接</td>
+                                <td><label class="zt_con"><i class="available"></i>显示</label></td>
+                                <td>
+                                    <div class="operation">
+                                        <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                        <small class="line1">|</small>
+                                        <div class="del">
+                                            <span class="op_text disable_text">删除</span>
+                                            <div class="xl_sx del_box">
+                                                <div class="xl_arrow"></div>
+                                                <div class="xl_con">
+                                                    <div class="xl_text">
+                                                        您确定要删除此角色吗？ 
+                                                    </div>
+                                                    <div class="xl_btn">
+                                                        <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                        <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>   
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page_block">
+                    <a href="" class="an_btn tb_orange tb_r add_btn" data-reveal-id="editRole">添加友情链接</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!--添加友情链接弹窗-->
+    <div class="box" id="editRole" style="width:510px;display:block;">
+        <div class="box_tit">
+            <div class="box_t_name">添加友情链接</div>
+            <div href="#" class="box_close close-reveal-modal"></div>
+        </div>
+        <div class="box_con">
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span" style="margin-top: 10px">链接名称</span>
+                    <input type="text" placeholder="请输入角色名称" class="box_input">
+                </label>
+            </div>
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span" style="margin-top: 10px">链接地址</span>
+                    <input type="text" placeholder="http://" class="box_input">
+                </label>
+            </div>
+            <div class="box_row">
+                <label class="box_label clearfix">
+                    <span class="tc_span" style="margin-top: 10px">打开方式</span>
+                    <div class="box_inputs">
+                        <select class="box_input s_dj">
+                            <option value="">1</option>
+                        </select>
+                    </div>
+                </label>
+            </div>
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span" style="float: left;height:36px;line-height: 36px;">添加图片</span>
+                    <div class="div_left clearfix">
+                        <div class="div_width" id="div_cl"></div>
+                        <input type="file" onclick="div_cl.click()" class="disnone"/>
+                        <span class="span_tx">png透明格式文件</span>
+                    </div>
+                </label>
+            </div>
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span">选择状态</span>
+                    <input type="radio" name="able" style="margin-left: 40px">
+                    <span class="choose_span">显示</span>
+                    <input type="radio" name="able" style="margin-left:24px;">
+                    <span class="choose_span">隐藏</span>
+                </label>
+            </div>
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span">连接位置</span>
+                    <input type="radio" name="able" style="margin-left: 40px">
+                    <span class="choose_span">上层链接</span>
+                    <input type="radio" name="able">
+                    <span class="choose_span">下层连接</span>
+                </label>
+            </div>
+        </div>
+        <div class="gbox_btm">
+            <button href="#" class="gbox_btn_clear close-reveal-modal">取消</button>
+            <button class="gbox_btn_save  tb_orange close-reveal-modal">保存</button>
+        </div>
+    </div>
+</body>
+</html>

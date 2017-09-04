@@ -1,0 +1,227 @@
+/*table*/
+.tb_tables {
+    clear: both;
+    width: 100%;
+    background: #ffffff;
+    overflow: auto;
+    text-align: center;
+    border-bottom: 1px solid #C9CDD7;
+    min-width: 1024px;
+}
+
+.tb_tables thead tr {
+    width: 100%;
+    height: 56px;
+    text-align: center;
+    background: #e7e8e9;
+    font-size: 14px;
+    color: #161616;
+}
+.tb_tables thead tr td{
+    border-right: 1px solid #c9cdd7;
+}
+.tb_tables td{
+    border-top: 1px solid #c9cdd7;
+}
+.tb_tables tbody td:nth-child(1){
+    border-right: 1px solid #c9cdd7;
+}
+.tb_tables tbody tr{
+    width: 100%;
+    height: 48px;
+    font-size: 12px;
+    color: #333333;
+}
+.tb_tables tbody tr:nth-child(2n+1){
+    background: #f9f9f9;
+}
+
+/*分页效果*/
+.page_block{
+    width: 100%;
+    height: 48px;
+    border-top: 1px solid #c9cdd7;
+    font-size: 13px;
+    color: #333333;
+    position: relative;
+}
+.page_con {
+    width: 660px;
+    height: 100%;
+    line-height: 26px;
+    margin: auto;
+    padding-top: 10px;
+}
+.tb_pag_xs,.fy_a,.pages,.line2,.pag_choose,.confirm{
+    float: left;
+    text-align: center;
+}
+.prev,.next{
+    display: inline-block;
+    width: auto;
+    height: 27px;
+    padding: 0 10px;
+    border-radius: 4px;
+}
+.prev{
+    margin-left: 20px;
+    color: #dddddd;
+    margin-right: 10px;
+}
+.line2{
+    display: inline-block;
+    color: #dddddd;
+}
+.pages a{
+    display: inline-block;
+    font-size: 12px;
+    color: #333333;
+    width: 33px;
+    height: 27px;
+    text-align: center;
+    border-radius: 4px;
+    /*margin-top: 10px;*/
+}
+.pages a:hover{
+    background:#f5f5f5;
+    color: #fd8b57;
+}
+.pages .page_check{
+    background:#f5f5f5;
+    color: #fd8b57;
+}
+.next{
+    color: #333333;
+    margin-left: 10px;
+}
+.prev:hover,.next:hover{
+    background:#f5f5f5;
+    color: #fd8b57;
+}
+.pag_choose{
+    margin-left: 30px;
+    display: inline-block;
+    width: 75px;
+    height: 27px;
+}
+.dir_pag{
+    display: inline-block;
+    width: 33px;
+    height: 27px;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    text-align: center;
+    margin: 0 5px;
+    float: left;
+    line-height: 27px;
+}
+.confirm{
+    display: inline-block;
+    width: 42px;
+    height: 27px;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    text-align: center;
+    margin: 0 5px;
+    background: #f8f8f8;
+    color: #333;
+}
+
+/*拉黑启用框*/
+.xl_sx {
+    height: 116px;
+    width: 303px;
+    position: absolute;
+    z-index: 100;
+    display: none;
+    float: left;
+    top: 48px;
+    right: -56px;
+}
+.xl_arrow {
+    float: left;
+    height: 9px;
+    width: 17px;
+    background: url("../img/arr_up.png") no-repeat center center;
+    margin-left: 215px;
+    clear: both;
+    position: absolute;
+    top: -15px;
+    z-index: 10;
+    zoom: 1;
+}
+.xl_con {
+    clear: both;
+    float: left;
+    height: 114px;
+    width: 303px;
+    background-color: #fff;
+    margin-top: -6px;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#DBDBDB', Direction=135,Strength=10);
+    -webkit-box-shadow: 1px 1px 10px #BFBCBC;
+    box-shadow: 1px 1px 10px #BFBCBC;
+    /*border: 1px solid #ced4e0;*/
+    /*border-top: none;*/
+}
+.line1{
+    display: inline-block;
+    color: #dddddd;
+    padding: 0 5px;
+}
+.xl_text{
+    width: 100%;
+    height: 52px;
+    border-bottom: 1px solid #ced4e0;
+    font-size: 16px;
+    color: #666666;
+    line-height: 52px;
+}
+.xl_btn{
+    width: 100%;
+    height: 60px;
+    /*padding: 15px 30px;*/
+}
+.an_btn{
+    display: inline-block;
+    width: auto;
+    padding: 0 10px;
+    height: 30px;
+    min-width: 80px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    margin: 15px;
+}
+.tb_l{
+    float: left;
+}
+.tb_r{
+    float: right;
+}
+.pag_choose small{
+    font-size: 13px;
+    float: left;
+}
+
+.td_img {
+    position: relative;
+}
+.d_if {
+    position: absolute;
+    width: 260px;
+    height: 175px;
+    border: 1px solid #eee;
+    top: 0;
+    left: 74%;
+    z-index: 200;
+    _z-index: 200;
+    display: none;
+}
+.d_if img {
+    width: 100%;
+    height: auto;
+}
+
+
+

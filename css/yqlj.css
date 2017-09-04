@@ -1,0 +1,39 @@
+/* CSS Document */
+body{overflow-x:hidden;overflow-y:hidden;position:relative;}
+.con{width:100%;padding:0 15px;padding-top:13px;}
+.title{background:#fff;}
+.user_info{border:1px solid #c9cdd7;}
+.tb_tables thead tr td:last-child{border-right:none !important;}
+.operation{width:70px;height: 47px;margin: auto;line-height: 48px;}
+.cz_text{color: #00a8ff;float: left;}
+.line1{float:left;}
+.del,.close{ float: left;position: relative;cursor: pointer;height: 48px;line-height: 48px;width: 25px;}
+.op_text{color: #00a8ff;}
+.xl_arrow{margin-left:228px;}
+.available {display: inline-block;width: 17px;height: 17px;background: url("../img/normal.png") no-repeat center center;float: left;margin-top: 15px;}
+.disable { display: inline-block;width: 17px;height: 17px;background: url("../img/disable.png") no-repeat center center;float: left; margin-top: 15px;}
+.zt_con {display: inline-block; width:58px;height: 47px;margin: auto;line-height: 47px;font-size: 12px;text-align: center;}
+.td_left{text-align:left;}
+.td_yu{padding-left:68px;}
+.td_fl{padding-left:54px;text-align:left;}
+.info_contain{width: 100%; height: 100%; background: #fff;box-shadow: 0 0 10px #F7F7F7;overflow-y:hidden; overflow-x: auto;}
+.tb_con{width: 100%;overflow: auto;height: auto;position: relative;}
+.add_btn{font-size:13px;font-family:"微软雅黑";margin: 8px 15px;}
+/*弹窗样式开始*/
+.div_left{float:left;margin-left:12px;}
+.div_width{width:60px;height:60px;border:1px solid #d8d8d8;background-color:#fff;background-image:url(../img/pc_jt.png) ;
+background-repeat:no-repeat;background-position:center;float:left;cursor:pointer;}
+.span_tx{margin-top:25px;margin-left:12px;color:#999999;font-size:12px;float:left;}
+.disnone{display:none;}
+.page_block{background:#fff;}
+.tc_span{float:left;}
+/*select*/
+.box_inputs{float:left;}
+.box_input{display:block;float:left;}
+.s_dj{background-repeat:no-repeat;background-position:197px center;color:#999;}
+.ul_li{ width: 217px;height: 90px;border: 1px solid #d8d8d8; background: #fff; margin-left: 10px; /*box-sizing: border-box;*/ line-height: 36px;color:#333;clear:both;border-top:none;position:absolute;top:160px;left:110px;color:#999;*width:221px;}
+.ul_li li{height:30px;line-height:30px; width:100%;}
+
+.ul_li li:hover{background:#eee;width:100%;}
+.s_num{margin-left:4px;}
+.box_con{position:relative;}

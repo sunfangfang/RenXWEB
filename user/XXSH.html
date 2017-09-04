@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人像摄影学会-修改信息审核</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../css/top.css">
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
+    <script type="text/javascript" src="../js/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="../js/placeholder.js"></script>
+    <script type="text/javascript" src="../js/user.js"></script>
+    <script>
+        $(function(){
+            $(".use_photo").hover(function(){
+                var trH=$(this).offset().top;
+                var tbH=parseInt($(".tb_con").offset().top)+parseInt($(".tb_con").height())-150;
+                if(trH>tbH){
+                    $(this).next().css("top","-125px");
+                }else{
+                    $(this).next().css("top","0px");
+                }
+                $(this).next().toggle();
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="top">
+        <div class="t_left">
+            <i class="addr"><img src="../img/addr.png" alt=""></i>
+            <span>您所在的位置: 首页>用户管理>用户组></span>
+            <span style="color: #fa8383">修改信息审核</span>
+        </div>
+        <i class="refresh"><img src="../img/refresh.png" alt=""></i>
+    </div>
+    <div class="con">
+        <div class="info_contain">
+            <div class="title"><span class="tit_txt">本站用户</span>
+                <div class="top_src">
+                    <input type="text" class="src_input" placeholder="请输入客户编号/客户姓名/电话">
+                    <a class="src_btn tb_green">查询</a>
+                </div>
+            </div>
+            <div class="user_info">
+                <div class="tb_con">
+                    <table class="tb_tables" cellspacing="0" cellpadding="0">
+                        <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>用户名</td>
+                            <td>笔名</td>
+                            <td>头像</td>
+                            <td>地址</td>
+                            <td>电话</td>
+                            <td>状态</td>
+                            <td style="border-right: none">操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>121</td>
+                            <td>王彦龙</td>
+                            <td>随手万福</td>
+                            <td class="td_img">
+                                <div class="use_photo"><img src="../img/user_photo.png" alt=""></div>
+                                <div class="d_if">
+                                    <img src="../img/user_photo.png" alt="文章管理"/>
+                                </div>
+                            </td>
+                            <td>北京市大兴区奥宇科技英巢大厦A座306</td>
+                            <td>13569858745</td>
+                            <td>已支付</td>
+                            <td>
+                                <div class="operation sh_opt">
+                                    <div class="close">
+                                        <span class="op_text">审核</span>
+                                        <div class="xl_sx lh_box">
+                                            <div class="xl_arrow"></div>
+                                            <div class="xl_con">
+                                                <div class="xl_text">
+                                                    您确定要审核此用户吗？
+                                                </div>
+                                                <div class="xl_btn">
+                                                    <a href="#" class="an_btn tb_orange tb_r">确定</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page_block">
+                    <div class="page_con">
+                        <span class="tb_pag_xs"> 每页显示11条，共<label>13</label>页</span>
+                        <a href="#" class="fy_a"><span class="prev">上一页</span></a>
+                        <small class="line2">|</small>
+                        <span class="pages">
+                            <a href="#" class="page_check"><span>01</span></a>
+                            <a href="#"><span>02</span></a>
+                            <a href="#"><span>03</span></a>
+                            <a class="sl">...</a>
+                            <a href="#"><span>13</span></a>
+                        </span>
+                        <small class="line2">|</small>
+                        <a href="#" class="fy_a"><span class="next">下一页</span></a>
+                        <span class="pag_choose"><small>第</small><input type="text" value="13" class="dir_pag"><small>页</small></span>
+                        <a href="#" class="confirm">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

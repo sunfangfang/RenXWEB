@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script src="js/jquery.watermarkinput.js"></script>
+    <script type="text/javascript">
+        $(window).load(function(){
+            conH()
+        });
+        $(window).resize(function() {
+            conH()
+        });
+        function conH() {
+            var H=$(window).height();
+            $(".contain").css("height", H);
+        }
+		$(function(){
+			$(".input_sd").Watermark("用户名");
+			$(".input_s").Watermark("密码");	
+			$(".input_ts").Watermark("验证码");			   	
+		});
+    </script>
+</head>
+<body>
+    <div class="contain">
+        <img src="img/login_bg.png" alt="" class="login_bg">
+        <div class="login_box">
+            <div class="login_tit"></div>
+            <div class="login_bottom">
+               <div class="div_cl">
+                  <input type="text" value="用户名" class="input_t input_sd"/>
+               </div>
+               <div class="div_clf">
+                 <input type="password" value="密码" class="input_t input_s"/>
+               </div>
+              <div class="div_cls">
+                 <div class="div_left">
+                     <input type="text" value="验证码" class="input_ts"/>
+                 </div>
+                 <div class="div_right">
+                     <img src="img/login_text.png" alt="验证码"/>
+                 </div>
+               </div>
+               <a href="#2" class="a_login">登&nbsp 录</a> 
+         </div>
+      </div>
+</body>
+</html>

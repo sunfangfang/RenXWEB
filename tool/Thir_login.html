@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人像摄影学会-第三方登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="../css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../css/top.css">
+    <link rel="stylesheet" type="text/css" href="../css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="../css/tc.css">
+    <link rel="stylesheet" type="text/css" href="../css/manager.css">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="../js/placeholder.js"></script>
+    <script type="text/javascript" src="../js/manager.js"></script>
+    <script>
+        $(function(){
+            $(window).resize(function() {
+                TBH();
+            });
+            function TBH() {
+                var H=$(window).height();
+                var NH = parseInt(H) -142;
+                $(".login_content").css("height", NH);
+                if($(window).width()<=1030){
+                    $(".login_con").addClass("login_con_1030");
+                }else{
+                    $(".login_con").removeClass("login_con_1030");
+                }
+                if($(window).width()<=848){
+                    $(".login_row").addClass("login_row_848");
+                }else{
+                    $(".login_row").removeClass("login_row_848");
+                }
+            }
+            TBH();
+        })
+    </script>
+</head>
+<body>
+<div class="top">
+    <div class="t_left">
+        <i class="addr"><img src="../img/addr.png" alt=""></i>
+        <span>您所在的位置: 首页>扩展工具></span>
+        <span style="color: #fa8383">第三方登录</span>
+    </div>
+    <i class="refresh"><img src="../img/refresh.png" alt=""></i>
+</div>
+<div class="con">
+    <div class="info_contain">
+        <div class="title">
+            <span class="tit_txt">第三方登录</span>
+        </div>
+        <div class="login_content">
+            <div class="login_con">
+                <div class="login_contain">
+                    <div class="login_box">
+                        <div class="login_row">
+                            <span class="login_choose login_check">QQ互联网登录设置</span>
+                        </div>
+                        <div class="login_row">
+                            <span class="login_name">APPkey</span><input type="text" class="login_input">
+                        </div>
+                        <div class="login_row">
+                            <span class="login_name">APPsecret</span><input type="text" class="login_input">
+                        </div>
+                        <div class="login_row" style="margin-top: 20px">
+                            <div class="row_one"><span class="login_name">授权回调页 : </span><span class="login_txt">http:192.168.0.3:8060/index.php</span></div>
+                            <div class="row_one"><a href="javascript:void(0);" style="color: #fe6a6a;font-size: 14px">点击此处</a><span class="login_txt">获取QQ互联APPkey及APPsecret</span></div>
+                        </div>
+                    </div>
+                    <div class="login_box" style="border-right: none;">
+                        <div class="login_row">
+                            <span class="login_choose">新浪微博登录设置</span>
+                        </div>
+                        <div class="login_row">
+                            <span class="login_name">APPkey</span><input type="text" class="login_input">
+                        </div>
+                        <div class="login_row">
+                            <span class="login_name">APPsecret</span><input type="text" class="login_input">
+                        </div>
+                        <div class="login_row" style="margin-top: 20px">
+                            <div class="row_one"><span class="login_name">授权回调页 : </span><span class="login_txt">http:192.168.0.3:8060/index.php？g=api&a=callback&type=sina</span></div>
+                            <div class="row_one"><span class="login_name" style="width: 110px">取消授权回调页 : </span><span class="login_txt">http://192.168.0.3:8060</span></div>
+                            <div class="row_one"><a href="javascript:void(0);" style="color: #fe6a6a;font-size: 14px">点击此处</a><span class="login_txt">获取新浪微博APPkey及APPsecret</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login_save tb_blue">保存</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $(".login_choose").click(function(){
+            $(".login_choose").removeClass("login_check");
+            $(this).addClass("login_check");
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+@charset "utf-8";
+.sub_menu{
+    display: inline-block;
+    width: auto;
+    height: 49px;
+    background: url("../img/sub_menu.png") no-repeat left center;
+    padding-left: 20px;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 49px;
+}
+.row_r{
+    width: 300px;
+    float: left;
+    margin-left: 10px;
+}
+.add_img{
+    width: 61px;
+    height: 61px;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    cursor: pointer;
+    float: left;
+}
+.ptompt{
+    float: left;
+    display: inline-block;
+    width: auto;
+    height: 61px;
+    line-height: 61px;
+    font-size: 12px;
+    color: #999999;
+    margin-left: 10px;
+}
+
+.login_content{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    overflow: auto;
+}
+.login_con{
+    width: 80%;
+    height: auto;
+    padding:0 10%;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+.login_contain{
+    width: 100%;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 60px 0;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+.login_box {
+    width: 49%;
+    height: auto;
+    border-right: 1px solid #d5d5d5;
+    float: left;
+}
+.login_row{
+    width: 80%;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20%;
+    box-sizing: content-box;
+}
+.login_choose{
+    display: inline-block;
+    width: auto;
+    padding-left: 20px;
+    background: url("../img/login_cir.png") no-repeat left center;
+    font-size: 20px;
+    color: #333333;
+    cursor: pointer;
+}
+.login_check{
+    background: url("../img/login_check.png") no-repeat left center;
+}
+.login_name{
+    display: inline-block;
+    width: 90px;
+    height: 100%;
+    text-align: left;
+    font-size: 14px;
+    color: #666666;
+    float: left;
+}
+.login_input{
+    width: 217px;
+    height: 36px;
+    border: 1px solid #d5d5d5;
+    float: left;
+    margin-top: 7px;
+    padding: 0 4px;
+    line-height: 36px;
+}
+.login_txt{
+    font-size: 14px;
+    color: #666666;
+}
+.row_one{
+    width: 100%;
+    height: auto;
+    line-height: 23px;
+}
+.login_save{
+    clear: both;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    color: #fefefe;
+    margin-top: 40px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+.login_row_848 {
+    width: 100%;
+    padding-left: 20px;
+}
+.login_con_1030 {
+    width: 96%;
+    padding: 0 2%;
+}
+

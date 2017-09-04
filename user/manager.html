@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人像摄影学会-管理员</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="../css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../css/top.css">
+    <link rel="stylesheet" type="text/css" href="../css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="../css/tc.css">
+    <link rel="stylesheet" type="text/css" href="../css/manager.css">
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="../js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="../js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="../js/placeholder.js"></script>
+    <script type="text/javascript" src="../js/manager.js"></script>
+    <script type="text/javascript">
+        var setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            view: {
+                showIcon: false
+//                showLine: false
+            }
+        };
+
+        var zNodes =[
+            { id:1, pId:0, name:"内容管理", open:true},
+            { id:11, pId:1, name:"所有留言", open:true},
+            { id:111, pId:11, name:"删除网站留言"},
+            { id:12, pId:1, name:"评论管理", open:true},
+            { id:121, pId:12, name:"删除评论"},
+            { id:122, pId:12, name:"评论审核"},
+            { id:13, pId:1, name:"文章管理", open:true},
+            { id:131, pId:13, name:"文章排序"},
+            { id:132, pId:13, name:"文章置顶"},
+            { id:133, pId:13, name:"文章推荐"},
+            { id:134, pId:13, name:"批量移动"},
+            { id:14, pId:1, name:"分类管理"},
+            { id:15, pId:1, name:"页面管理"},
+            { id:16, pId:1, name:"回收站"},
+            { id:17, pId:1, name:"会员付费"},
+            { id:3, pId:0, name:"扩展工具"},
+            { id:4, pId:0, name:"菜单管理"}
+        ];
+
+        var code;
+
+        function setCheck() {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+                    py = $("#py").attr("checked")? "p":"",
+                    sy = $("#sy").attr("checked")? "s":"",
+                    pn = $("#pn").attr("checked")? "p":"",
+                    sn = $("#sn").attr("checked")? "s":"",
+                    type = { "Y":py + sy, "N":pn + sn};
+            zTree.setting.check.chkboxType = type;
+            showCode('setting.check.chkboxType = { "Y" : "' + type.Y + '", "N" : "' + type.N + '" };');
+        }
+        function showCode(str) {
+            if (!code) code = $("#code");
+            code.empty();
+            code.append("<li>"+str+"</li>");
+        }
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#tree"), setting, zNodes);
+            setCheck();
+            $("#py").bind("change", setCheck);
+            $("#sy").bind("change", setCheck);
+            $("#pn").bind("change", setCheck);
+            $("#sn").bind("change", setCheck);
+        });
+    </script>
+</head>
+<body>
+<div class="top">
+    <div class="t_left">
+        <i class="addr"><img src="../img/addr.png" alt=""></i>
+        <span>您所在的位置: 首页>用户管理>管理组></span>
+        <span style="color: #fa8383">管理员</span>
+    </div>
+    <i class="refresh"><img src="../img/refresh.png" alt=""></i>
+</div>
+<div class="con">
+    <div class="info_contain">
+        <div class="title"><span class="tit_txt">管理员</span>
+            <div class="top_src">
+                <input type="text" class="src_input" placeholder="请输入客户编号/客户姓名/电话">
+                <a class="src_btn tb_green">查询</a>
+            </div>
+        </div>
+        <div class="user_info">
+            <div class="tb_con">
+                <table class="tb_tables" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>角色名称</td>
+                        <td>最后登录IP</td>
+                        <td>最后登录时间</td>
+                        <td>邮箱</td>
+                        <td>状态</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text disable_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text disable_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text disable_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>超级管理员</td>
+                        <td>192.168.0.86</td>
+                        <td>2016-04-23</td>
+                        <td>1216470442@qq.com</td>
+                        <td><label class="zt_con"><i class="available"></i>正常使用</label></td>
+                        <td>
+                            <div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="editRole">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此角色吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="line1">|</small>
+                                <div class="close">
+                                    <span class="op_text">拉黑</span>
+                                    <div class="xl_sx lh_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要拉黑此用户吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_l">确定</a>
+                                                <a href="#" class="an_btn tb_blue tb_r">取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page_block">
+                <a href="" class="an_btn tb_orange tb_r add_btn" data-reveal-id="addRole">添加管理员</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--添加角色-->
+<div class="box" id="addRole" style="width:510px;">
+    <div class="box_tit">
+        <div class="box_t_name">添加管理员</div>
+        <div href="#" class="box_close close-reveal-modal"></div>
+    </div>
+    <div class="box_con">
+        <div class="box_row">
+            <label class="box_label">
+                <span class="tc_span" style="margin-top: 10px">用户名</span>
+                <input type="text" placeholder="请输入用户名" class="box_input">
+            </label>
+        </div>
+        <div class="box_row">
+            <label class="box_label">
+                <span class="tc_span" style="float: left;height:36px;line-height: 36px;">密码</span>
+                <input type="text" placeholder="请输入密码" class="box_input">
+            </label>
+        </div>
+        <div class="box_row">
+            <label class="box_label">
+                <span class="tc_span" style="float: left;height:36px;line-height: 36px;">邮箱</span>
+                <input type="text" placeholder="请输入绑定邮箱" class="box_input">
+            </label>
+        </div>
+        <div class="box_row" style="margin-top: 60px">
+            <label class="box_label">
+                <span class="tc_span">角色</span>
+                <input type="checkbox" style="margin-left: 40px">
+                <span class="choose_span">管理员</span>
+                <input type="checkbox">
+                <span class="choose_span">超级管理员</span>
+            </label>
+        </div>
+    </div>
+    <div class="gbox_btm">
+        <button href="#" class="gbox_btn_clear close-reveal-modal">取消</button>
+        <button class="gbox_btn_save  tb_orange close-reveal-modal">保存</button>
+    </div>
+</div>
+<!--编辑角色-->
+<div class="box" id="editRole" style="width:510px;">
+    <div class="box_tit">
+        <div class="box_t_name">编辑管理员</div>
+        <div href="#" class="box_close close-reveal-modal"></div>
+    </div>
+    <div class="box_con">
+        <div class="box_row">
+            <label class="box_label">
+                <span class="tc_span" style="margin-top: 10px">用户名</span>
+                <input type="text" placeholder="请输入用户名" class="box_input">
+            </label>
+        </div>
+        <div class="box_row">
+            <label class="box_label">
+                <span class="tc_span" style="float: left;height:36px;line-height: 36px;">密码</span>
+                <input type="text" placeholder="请输入密码" class="box_input">
+            </label>
+        </div>
+        <div class="box_row">
+            <label class="box_label">
+                <span class="tc_span" style="float: left;height:36px;line-height: 36px;">邮箱</span>
+                <input type="text" placeholder="请输入绑定邮箱" class="box_input">
+            </label>
+        </div>
+        <div class="box_row" style="margin-top: 60px">
+            <div class="box_label">
+                <span class="tc_span">角色</span>
+                <div class="role_block">
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">超级管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">超级管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">超级管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">超级管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">管理员</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="choose_span">超级管理员</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gbox_btm">
+        <button class="gbox_btn_clear close-reveal-modal">取消</button>
+        <button class="gbox_btn_save  tb_orange close-reveal-modal">保存</button>
+    </div>
+</div>
+
+</body>
+</html>

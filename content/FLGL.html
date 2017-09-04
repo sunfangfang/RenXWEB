@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页-分类管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../css/top.css">
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
+    <link rel="stylesheet" type="text/css" href="../css/recycle.css">
+    <link rel="stylesheet" type="text/css" href="../css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="../css/tc.css">
+    <link rel="stylesheet" type="text/css" href="../css/manager.css">
+    <script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="../js/placeholder.js"></script>
+    <script type="text/javascript" src="../js/user.js"></script>
+    <script type="text/javascript" src="../js/manager.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="t_left">
+            <i class="addr"><img src="../img/addr.png" alt=""></i>
+            <span>您所在的位置: 首页></span>
+            <span style="color: #fa8383">分类管理</span>
+        </div>
+        <i class="refresh"><img src="../img/refresh.png" alt=""></i>
+    </div>
+    <div class="con">
+        <div class="info_contain">
+            <div class="title"><span class="tit_txt"><strong>分类管理</strong></span></div>
+            <div class="user_info">
+                 <div class="tb_con">
+                    <table class="tb_tables" cellspacing="0" cellpadding="0">
+                        <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>分类名称</td>
+                            <td>分类类型</td>
+                            <td style="border-right: none;">操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>学会动态</td>
+                            <td>文章</td>
+                            <td><div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="TJFL">添加子菜单</a>
+                                <small class="line1">|</small>
+                                <a href="#" class="cz_text" data-reveal-id="TJFL">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此分类吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_r">确定</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>学会动态</td>
+                            <td>文章</td>
+                            <td><div class="operation">
+                                <a href="#" class="cz_text" data-reveal-id="TJFL">添加子菜单</a>
+                                <small class="line1">|</small>
+                                <a href="#" class="cz_text" data-reveal-id="TJFL">编辑</a>
+                                <small class="line1">|</small>
+                                <div class="del">
+                                    <span class="op_text">删除</span>
+                                    <div class="xl_sx del_box">
+                                        <div class="xl_arrow"></div>
+                                        <div class="xl_con">
+                                            <div class="xl_text">
+                                                您确定要删除此分类吗？
+                                            </div>
+                                            <div class="xl_btn">
+                                                <a href="#" class="an_btn tb_orange tb_r">确定</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page_block">
+                    <a href="" class="fl_btn tb_orange tb_r add_btn" data-reveal-id="TJFL">添加分类</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加分类-->
+    <div class="box" id="TJFL" style="width:510px;">
+        <div class="box_tit">
+            <div class="box_t_name">编辑角色</div>
+            <div href="#" class="box_close close-reveal-modal"></div>
+        </div>
+        <div class="box_con">
+            <div class="box_row">
+                <div class="box_label">
+                    <span class="tc_span" style="margin-top: 10px">菜单位置</span>
+                    <select class="box_sel">
+                    	<option>作为一级分类</option>
+                    </select>
+                </div>
+            </div>
+            <div class="box_row">
+                <div class="box_label">
+                    <span class="tc_span" style="margin-top: 10px">分类名称</span>
+                    <input type="text" placeholder="" class="box_input">
+                </div>
+            </div>
+            <div class="box_row">
+                <div class="box_label">
+                    <span class="tc_span" style="margin-top: 10px">分类类型</span>
+                    <select class="box_sel">
+                    	<option>文章</option>
+                    </select>
+                </div>
+            </div>
+            <div class="box_row">
+                <div class="box_label">
+                    <span class="tc_span" style="float: left;height:36px;line-height: 36px;">添加描述</span>
+                    <textarea type="text" placeholder=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="gbox_btm">
+            <button href="#" class="gbox_btn_clear close-reveal-modal">取消</button>
+            <button class="gbox_btn_save  tb_orange close-reveal-modal">保存</button>
+        </div>
+    </div>
+</body>
+</html>

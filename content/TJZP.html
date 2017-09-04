@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人像摄影学会-添加作品</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="../css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../css/top.css">
+    <link rel="stylesheet" type="text/css" href="../css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="../css/tc.css">
+    <link rel="stylesheet" type="text/css" href="../css/AddArticle.css">
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="../js/placeholder.js"></script>
+    <script>
+        $(function(){
+            $(window).resize(function() {
+                TBH();
+            });
+            function TBH() {
+                var H=$(window).height();
+                var NH = parseInt(H) -180;
+                $(".add_info").css("height", NH);
+            }
+            TBH();
+        });
+    </script>
+</head>
+<body>
+<div class="top">
+    <div class="t_left">
+        <i class="addr"><img src="../img/addr.png" alt=""></i>
+        <span>您所在的位置: 首页>内容管理></span>
+        <span style="color: #fa8383">文章管理</span>
+    </div>
+    <i class="refresh"><img src="../img/refresh.png" alt=""></i>
+</div>
+<div class="con">
+    <div class="info_contain">
+        <div class="title">
+            <span class="tit_txt">添加作品</span>
+        </div>
+        <div class="add_info">
+            <div class="add_row">
+                <div class="add_l"><span class="thumb_span">缩&nbsp;&nbsp;略&nbsp;&nbsp;图&nbsp;:</span></div>
+                <div class="add_r"><div class="thumb"><img src="../img/thumb.png" alt=""></div><span class="tishi">最多只能添加1张图片哟~</span></div>
+            </div>
+            <div class="add_row">
+                <div class="add_l"><span class="thumb_span">预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;览&nbsp;:</span></div>
+                <div class="add_r"><div class="thumb" style="width: 318px;"><img src="../img/thumb.png" alt=""></div></div>
+            </div>
+            <div class="add_row">
+                <div class="add_l"><span class="thumb_span">图&nbsp;&nbsp;文&nbsp;&nbsp;集&nbsp;:</span></div>
+                <div class="add_r" style="width: 80%">
+                    <div class="add_pic">
+                        <div class="thumb thumb1">
+                            <img src="../img/pic01.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic02.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic03.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic01.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic02.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic03.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic01.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic02.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic03.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic01.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic02.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1">
+                            <img src="../img/pic03.png" alt="">
+                            <div class="pic_del">
+                                <img src="../img/pic_del.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thumb thumb1"><img src="../img/thumb.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="add_row">
+                <div class="add_l"><span class="time_span">标题名称&nbsp;:</span></div>
+                <div class="add_r"><input type="text" class="add_input" placeholder="请输入标题"></div>
+            </div>
+            <div class="add_row" style="margin-top: 30px">
+                <div class="add_btn tb_blue" style="margin-left: 190px">提交</div>
+                <div class="add_btn tb_gray">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

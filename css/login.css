@@ -1,0 +1,53 @@
+@charset "utf-8";
+body{
+    background-color: #666666;
+/*	background-image:url(../img/login_bg.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;*/
+	width:100%;
+	height:100%;
+}
+.contain{
+    width: 100%;
+    height: 100%;
+}
+.login_bg{
+    width: 100%;
+    height: 100%;
+}
+.login_box{
+    position: absolute;
+    top: 50%;
+    margin-top:-213px;
+    right: 20%;
+    width: 426px;
+    height: 428px;
+    background:url(../img/bg_text.png) no-repeat center;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#3A4352', Direction=135, Strength=5);/*for ie6,7,8*/
+    -moz-box-shadow:2px 2px 10px #212835;/*firefox*/
+    -webkit-box-shadow:2px 2px 10px #212835;/*webkit*/
+    box-shadow:2px 2px 10px #212835;/*opera或ie9*/
+    border-radius: 4px;
+    overflow: hidden;
+}
+.login_tit{
+    width: 100%;
+    height: 95px;
+    border-bottom: 2px solid #324160;
+    line-height: 95px;
+    background: url("../img/login_logo.png") no-repeat 20px center;
+}
+/*添加样式*/
+.login_bottom{width:328px;margin:0 auto;}
+.div_cl{width:100%;height:38px;margin-top:35px;line-height:38px;background:url(../img/dl_text.png) no-repeat center;}
+.div_clf{width:100%;height:38px;margin-top:35px;line-height:38px;background:url(../img/mm_text.png) no-repeat center;}
+.span_coin{width:38px;height:100%;background-color:#344362;float:left;background-image:url(../img/login_user.png);background-position:center;background-repeat:no-repeat;}
+.input_t{font-size:14px;color:#999;font-family:"微软雅黑";height:34px;line-height:34px;background:#f4f4f4;margin-left:14%;}
+.div_cls{width:100%;height:38px;border-radius:4px;clear:both;margin-top:35px;}
+.div_left{width:56%;height:38px;line-height:38px;color:#999;font-family:"微软雅黑";float:left;background:url(../img/yzm_text.png) no-repeat center;}
+.input_ts{font-size:14px;color:#999;font-family:"微软雅黑";float:left;height:34px;line-height:34px;width:66%;margin-left: 24%;
+    margin-top: 1px;background:#f4f4f4;}
+.div_right{float:right;width:126px;height:38px;}
+.div_right img{width:100%;}
+.a_login{width:100%;display:block;clear:both;text-align:center;color:#fff;font-size:14px;font-family:"微软雅黑";margin-top:38px;background:url(../img/button1.png) no-repeat center;height:54px;line-height:54px;}

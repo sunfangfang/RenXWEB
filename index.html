@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人像摄影学会</title>
+    <link rel="stylesheet" type="text/css" href="css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <!--头部导航-->
+    <div class="top">
+        <div class="top_left">
+            <div class="logo"></div>
+            <ul class="top_link">
+                <li><div class="link_img top_check"><a href=""><img src="img/top_link01.png" alt=""></a></div><div class="link_alt">首页</div></li>
+                <li><div class="link_img"><a href=""><img src="img/top_link02.png"></a></div><div class="link_alt">菜单管理</div></li>
+                <li><div class="link_img"><a href=""><img src="img/top_link03.png" alt=""></a></div><div class="link_alt">文章管理</div></li>
+                <!--<li><div class="link_img"><img src="img/top_link04.png" alt=""></div><div class="link_alt">首页</div></li>-->
+            </ul>
+        </div>
+        <div class="top_right">
+            <!--<div class="top_remind"><div class="remind_text"><div class="long">紧急通知：上课的附件四 地方及特色但是等机构倒计时覅而今天点击是人家圣诞节覅地方及特色但是等机构倒计时</div></div></div>-->
+            <div class="user">
+                <div class="user_contain">
+                    <i class="user_img"><img src="img/user.png" alt=""></i>
+                    <span class="user_text">admin</span>
+                    <i class="user_dir"><img src="img/dir_down.png" alt=""></i>
+                </div>
+                <div class="out_block">退出</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".user").hover(function(){
+            $(".out_block").toggle();
+        })
+    </script>
+    <!--左侧导航-->
+    <div id="nav">
+        <ul class="nav_fir">
+            <li>
+                <a href="set.html" target="I2" class="li_contain">
+                    <i class="nav_logo"><img src="img/set.png" alt=""></i>
+                    <span class="fir_txt">设置</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="li_contain">
+                    <i class="nav_logo"><img src="img/nav_user.png" alt=""></i>
+                    <span class="fir_txt">用户管理</span>
+                    <i class="nav_dir"></i>
+                </a>
+                <ul class="nav_sec">
+                    <li>
+                        <a href="javascript:void(0)" class="li_contain">
+                            <span class="sec_txt">用户组</span>
+                            <i class="nav_dir"></i>
+                        </a>
+                        <ul class="nav_thr">
+                            <li>
+                                <a href="user/BZ_user.html" target="I2" class="li_contain">
+                                    <span class="thr_txt">本站用户</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="user/DSF_user.html" target="I2" class="li_contain">
+                                    <span class="thr_txt">第三方用户</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="user/XXSH.html" target="I2" class="li_contain">
+                                    <span class="thr_txt">修改信息审核</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="li_contain">
+                            <span class="sec_txt">管理组</span>
+                            <i class="nav_dir"></i>
+                        </a>
+                        <ul class="nav_thr">
+                            <li>
+                                <a href="user/RoleManage.html" target="I2" class="li_contain">
+                                    <span class="thr_txt">角色管理</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="user/manager.html" target="I2" class="li_contain">
+                                    <span class="thr_txt">管理员</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="li_contain">
+                    <i class="nav_logo"><img src="img/menu.png" alt=""></i>
+                    <span class="fir_txt">菜单管理</span>
+                    <i class="nav_dir"></i>
+                </a>
+                <ul class="nav_sec">
+                    <li>
+                        <a href="menu/MenuManage.html" target="I2" class="li_contain">
+                            <span class="thr_txt">菜单管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu/MenuClass.html" target="I2" class="li_contain">
+                            <span class="thr_txt">菜单分类</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="li_contain">
+                    <i class="nav_logo"><img src="img/content.png" alt=""></i>
+                    <span class="fir_txt">内容管理</span>
+                    <i class="nav_dir"></i>
+                </a>
+                <ul class="nav_sec">
+                    <li>
+                        <a href="content/CDGL.html" target="I2" class="li_contain">
+                            <span class="sec_txt">会员付费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content/WZGL.html" target="I2" class="li_contain">
+                            <span class="sec_txt">文章管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content/FLGL.html" target="I2" class="li_contain">
+                            <span class="sec_txt">分类管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content/ZPGL.html" target="I2" class="li_contain">
+                            <span class="sec_txt">作品管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content/WZHS.html" target="I2" class="li_contain">
+                            <span class="sec_txt">回收站</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="li_contain">
+                    <i class="nav_logo"><img src="img/tool.png" alt=""></i>
+                    <span class="fir_txt">扩展工具</span>
+                    <i class="nav_dir"></i>
+                </a>
+                <ul class="nav_sec">
+                    <li>
+                        <a href="tool/YQLJ.html" target="I2" class="li_contain">
+                            <span class="sec_txt">友情链接</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tool/Thir_login.html" target="I2" class="li_contain">
+                            <span class="sec_txt">第三方登录</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--右侧整体-->
+    <div class="con">
+        <iframe id="if_con" name="I2" src="home.html">
+            <!--框架内容 -->
+        </iframe>
+    </div>
+    <!--右侧整体end-->
+</body>
+</html>

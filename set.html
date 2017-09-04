@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人像摄影学会-网站信息设置</title>
+    <link rel="stylesheet" type="text/css" href="css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <link rel="stylesheet" type="text/css" href="css/tc.css">
+    <link rel="stylesheet" type="text/css" href="css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="css/set.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="js/placeholder.js"></script>
+    <script>
+        $(function(){
+            $(window).resize(function() {
+                TBH();
+            });
+            function TBH() {
+                var H=$(window).height();
+                var NH = parseInt(H) -82;
+                $(".set_l,.set_r").css("height", NH);
+            }
+            TBH();
+        })
+    </script>
+</head>
+<body>
+    <div class="top">
+        <div class="t_left">
+            <i class="addr"><img src="img/addr.png" alt=""></i>
+            <span>您所在的位置: 首页></span>
+            <span style="color: #fa8383">网站信息设置</span>
+        </div>
+        <i class="refresh"><img src="img/refresh.png" alt=""></i>
+    </div>
+    <div class="con">
+        <div class="set_contain">
+            <div style="width: 1670px;">
+                <div class="set_l">
+                    <div class="title">
+                        <span class="tit_txt">个人信息</span>
+                    </div>
+                    <div class="info_con">
+                        <div class="info_block">
+                            <div class="info_row">
+                                <span class="set_span">昵称</span>
+                                <input type="text" value="admin" class="set_input">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">性别</span>
+                                <div class="select_border">
+                                    <div class="sel_container">
+                                        <select name="" class="select">
+                                            <option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">生日</span>
+                                <input type="text" value="2016-09-27" class="set_input">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">个性签名</span>
+                                <textarea class="set_textarea"></textarea>
+                            </div>
+                            <div class="set_btn">
+                                <a href="javascript:void(0);" class="set_block tb_blue">保存</a>
+                                <a href="javascript:void(0);" data-reveal-id="rewrite" class="set_block tb_orange">修改密码</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="set_r">
+                    <div class="title">
+                        <span class="tit_txt">网站信息</span>
+                    </div>
+                    <div class="info_con">
+                        <div class="info_block" style="margin-left:70px;">
+                            <div class="info_row">
+                                <span class="set_span">网站名称</span>
+                                <input type="text" value="中国人像摄影学会" class="set_input">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">网站域名</span>
+                                <input type="text" value="http://www.chinaportrait.org" class="set_input">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">后台地址加密码</span>
+                                <input type="password" class="set_input">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">模版方案</span>
+                                <div class="select_border">
+                                    <div class="sel_container">
+                                        <select name="" class="select">
+                                            <option>simplebootx</option>
+                                            <option>simplebootx</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">统计代码</span>
+                                <textarea class="set_textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="info_block" style="margin-left: 20px;">
+                            <div class="info_row">
+                                <span class="set_span">开启手机模版</span>
+                                <input type="checkbox" class="in_check">
+                                <span class="set_span">开启静态缓存</span>
+                                <input type="checkbox" class="in_check">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">后台风格</span>
+                                <div class="select_border">
+                                    <div class="sel_container">
+                                        <select name="" class="select">
+                                            <option>simplebootx</option>
+                                            <option>simplebootx</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">站长邮箱</span>
+                                <input type="text" value="中国人像摄影学会" class="set_input">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">备案信息</span>
+                                <input type="text" class="set_input" value="中国人像摄影学会">
+                            </div>
+                            <div class="info_row">
+                                <span class="set_span">模版方案</span>
+                                <textarea class="set_textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="set_btn" style="margin-left: 530px">
+                            <a href="javascript:void(0);" class="set_block tb_blue">保存</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--修改密码-->
+    <div class="box" id="rewrite" style="width:510px;">
+        <div class="box_tit">
+            <div class="box_t_name">修改密码</div>
+            <div class="box_close close-reveal-modal"></div>
+        </div>
+        <div class="box_con">
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span" style="margin-top: 10px">原始密码</span>
+                    <input type="password" class="box_input">
+                </label>
+            </div>
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span" style="float: left;height:36px;line-height: 36px;">新密码</span>
+                    <input type="password" class="box_input">
+                </label>
+            </div>
+            <div class="box_row">
+                <label class="box_label">
+                    <span class="tc_span" style="float: left;height:36px;line-height: 36px;">重新输入密码</span>
+                    <input type="password" class="box_input">
+                </label>
+            </div>
+        </div>
+        <div class="gbox_btm">
+            <button class="gbox_btn_clear close-reveal-modal">取消</button>
+            <button class="gbox_btn_save  tb_orange close-reveal-modal">保存</button>
+        </div>
+    </div>
+</body>
+</html>
